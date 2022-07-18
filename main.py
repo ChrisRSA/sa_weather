@@ -22,13 +22,13 @@ os.makedirs('data', exist_ok = True)
 def get_time():
     utc_hour = datetime.utcnow().hour
     time = ''
-    if utc_hour >= 7 and utc_hour < 13:
+    if utc_hour >= 9 and utc_hour < 15:
         time = '06h00UTC'
-    elif utc_hour >= 13 and utc_hour < 19:
+    elif utc_hour >= 15 and utc_hour < 21:
         time = '12h00UTC'
-    elif utc_hour >= 19 and utc_hour < 1:
+    elif utc_hour >= 21 and utc_hour < 3:
         time = '18h00UTC'
-    elif utc_hour >= 1 and utc_hour < 7:
+    elif utc_hour >= 3 and utc_hour < 9:
         time = '00h00UTC'
     return time
 
