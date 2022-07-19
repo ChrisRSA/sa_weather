@@ -27,6 +27,10 @@ jobs:
       # If using Python:
       - name: Pull data
         run: python3 main.py
+        env:
+          EMAIL1: ${{secrets.EMAIL1}}
+          EMAIL2: ${{secrets.EMAIL2}}
+          PASSWORD: ${{secrets.PASSWORD}}
 
       # NOTE: This commits everything in the `data` directory. Make sure this matches your needs
       - name: Git commit

@@ -1,7 +1,11 @@
 import requests, os, bs4
-from datetime import datetime
+from datetime import datetime, timedelta
 import sys
 from typing import List, Union
+
+EMAIL1 = os.environ['EMAIL1']
+EMAIL2 = os.environ['EMAIL2']
+PASSWORD = os.environ['PASSWORD']
 
 # from pydrive.auth import GoogleAuth
 # from pydrive.drive import GoogleDrive
@@ -65,7 +69,7 @@ def main():
     
     time = get_time()
 
-    filename = f"{datetime.utcnow().strftime('%Y-%m-%d')}-{time}.jpg"
+    filename = f"{(datetime.utcnow()-timedelta(hours=4)).strftime('%Y-%m-%d')}-{time}.jpg"
     full_path = os.path.join('data', filename)
     if len(sys.argv) > 1:
         filename = sys.argv[1]
@@ -91,9 +95,8 @@ def main():
     # gfile.Upload() # Upload the file.
     # print('Done uploading image.')
     
-
-
-
+    yag = yagmail.SMTP(EMAIL1, PASSWORD)
+    yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=f'data/{filename}.jpg')
 
 if __name__ == "__main__":
     main()
