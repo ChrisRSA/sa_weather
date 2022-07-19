@@ -5,4 +5,5 @@ PyDrive2==1.10.1
 requests==2.28.0
 urllib3==1.26.9
 yagmail==0.15.277
+keyring==23.7.0
 keyrings.alt==4.1.1
