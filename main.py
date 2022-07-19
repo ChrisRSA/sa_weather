@@ -2,6 +2,7 @@ import requests, os, bs4
 from datetime import datetime, timedelta
 import sys
 from typing import List, Union
+import yagmail
 
 EMAIL1 = os.environ['EMAIL1']
 EMAIL2 = os.environ['EMAIL2']
