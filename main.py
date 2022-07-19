@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import sys
 from typing import List, Union
 import yagmail
+import keyrings.alt
 
 EMAIL1 = os.environ['EMAIL1']
 EMAIL2 = os.environ['EMAIL2']
@@ -96,7 +97,8 @@ def main():
     # gfile.Upload() # Upload the file.
     # print('Done uploading image.')
     
-    yag = yagmail.SMTP(EMAIL1, PASSWORD)
+    yagmail.register(EMAIL1, PASSWORD)
+    yag = yagmail.SMTP(EMAIL1)
     yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=f'data/{filename}.jpg')
 
 if __name__ == "__main__":
