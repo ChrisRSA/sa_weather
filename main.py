@@ -96,10 +96,10 @@ def main():
     # gfile.SetContentFile(full_path)
     # gfile.Upload() # Upload the file.
     # print('Done uploading image.')
-    
-    yagmail.register(EMAIL1, PASSWORD)
-    yag = yagmail.SMTP(EMAIL1)
-    yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=f'data/{filename}.jpg')
+
+    # yagmail.register(EMAIL1, PASSWORD)
+    # yag = yagmail.SMTP(EMAIL1)
+    # yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=f'data/{filename}.jpg')
 
 if __name__ == "__main__":
     main()
