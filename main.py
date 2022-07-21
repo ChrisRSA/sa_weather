@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import sys
 from typing import List, Union
 import yagmail
-import keyrings.alt
+#import keyrings.alt
 
 EMAIL1 = os.environ['EMAIL1']
 EMAIL2 = os.environ['EMAIL2']
