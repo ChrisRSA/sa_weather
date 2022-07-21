@@ -99,7 +99,7 @@ def main():
 
     # yagmail.register(EMAIL1, PASSWORD)
     yag = yagmail.SMTP(EMAIL1, PASSWORD)
-    yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=f'data/{filename}.jpg')
+    yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=[full_path])
 
 if __name__ == "__main__":
     main()
