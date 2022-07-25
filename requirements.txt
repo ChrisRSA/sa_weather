@@ -7,3 +7,6 @@ urllib3==1.26.9
 yagmail==0.15.277
 keyring==23.7.0
 keyrings.alt==4.1.1
+pytesseract==0.2.0
+glob==0.7.2
+PIL==1.1.7
