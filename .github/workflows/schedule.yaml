@@ -32,8 +32,8 @@ jobs:
 
       # If using Python:
       - name: Pull data
-        run: python3 main.py
-        run: echo ${{ env.UPDATED }}
+        run: python3 main.py;
+          echo ${{ env.UPDATED }}
         env:
           EMAIL1: ${{ secrets.EMAIL1 }}
           EMAIL2: ${{ secrets.EMAIL2 }}
