@@ -14,6 +14,8 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+        run: sudo apt install tesseract-ocr
+          sudo apt install libtesseract-dev
 
       # If using Python:
       - name: Set up Python 3.8
@@ -23,9 +25,7 @@ jobs:
 
       # If using Python:
       - name: Install dependencies
-        run: sudo apt install tesseract-ocr
-          sudo apt install libtesseract-dev
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
 
       # If using Python:
       - name: Pull data
