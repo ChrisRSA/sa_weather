@@ -33,6 +33,7 @@ jobs:
       # If using Python:
       - name: Pull data
         run: python3 main.py
+        run: echo ${{ env.UPDATED }}
         env:
           EMAIL1: ${{ secrets.EMAIL1 }}
           EMAIL2: ${{ secrets.EMAIL2 }}
@@ -40,6 +41,7 @@ jobs:
 
       # NOTE: This commits everything in the `data` directory. Make sure this matches your needs
       - name: Git commit
+        if: ${{ env.UPDATED == 'TRUE' }}
         run: |
           git add data
           git config --local user.email "action@github.com"
@@ -48,6 +50,7 @@ jobs:
 
       # NOTE: Check that your branch name is correct here
       - name: Git push
+        if: ${{ env.UPDATED == 'TRUE' }}
         run: |
           git push "https://${GITHUB_ACTOR}:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
         env:
