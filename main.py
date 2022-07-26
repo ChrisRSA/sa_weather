@@ -7,6 +7,8 @@ from PIL import Image
 import pytesseract
 import glob
 
+env_file = os.getenv('GITHUB_ENV')
+
 # EMAIL1 = os.environ['EMAIL1']
 # EMAIL2 = os.environ['EMAIL2']
 # PASSWORD = os.environ['PASSWORD']
@@ -125,11 +127,15 @@ def main():
     latest_time = get_latest_file()
     if compare_text(full_path, latest_time) == True:
         print('Image has been updated.')
+        with open(env_file, "a") as myfile:
+            myfile.write("UPDATED=TRUE")
         print('Sending email...')
         # yag = yagmail.SMTP(EMAIL1, PASSWORD)
         # yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=[full_path])
     else:
         print('Image has not been updated.')
+        with open(env_file, "a") as myfile:
+            myfile.write("UPDATED=FALSE")
         exit()
 
 
