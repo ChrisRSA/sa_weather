@@ -16,8 +16,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install Tesseract
-        run: sudo yum install tesseract-ocr
-          sudo yum install libtesseract-dev
+        run: sudo apt-get update 
+          sudo apt-get install tesseract-ocr
+          sudo apt-get install libtesseract-dev
 
       # If using Python:
       - name: Set up Python 3.8
