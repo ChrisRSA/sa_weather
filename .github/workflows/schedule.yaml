@@ -16,8 +16,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install Tesseract
-        run: sudo apt-get install tesseract-ocr
-          sudo apt-get install libtesseract-dev
+        run: sudo apt update -y
+          #sudo apt-get install tesseract-ocr
+          #sudo apt-get install libtesseract-dev
 
       # If using Python:
       - name: Set up Python 3.8
