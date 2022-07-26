@@ -23,7 +23,9 @@ jobs:
 
       # If using Python:
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: sudo apt install tesseract-ocr
+          sudo apt install libtesseract-dev
+          pip install -r requirements.txt
 
       # If using Python:
       - name: Pull data
