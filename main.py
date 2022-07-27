@@ -9,9 +9,9 @@ import glob
 
 env_file = os.getenv('GITHUB_ENV')
 
-# EMAIL1 = os.environ['EMAIL1']
-# EMAIL2 = os.environ['EMAIL2']
-# PASSWORD = os.environ['PASSWORD']
+EMAIL1 = os.environ['EMAIL1']
+EMAIL2 = os.environ['EMAIL2']
+PASSWORD = os.environ['PASSWORD']
 
 # from pydrive.auth import GoogleAuth
 # from pydrive.drive import GoogleDrive
@@ -130,8 +130,8 @@ def main():
         with open(env_file, "a") as myfile:
             myfile.write("UPDATED=TRUE")
         print('Sending email...')
-        # yag = yagmail.SMTP(EMAIL1, PASSWORD)
-        # yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=[full_path])
+        yag = yagmail.SMTP(EMAIL1, PASSWORD)
+        yag.send(to=EMAIL2, subject='Test', contents='Hi Chris', attachments=[full_path])
     else:
         print('Image has not been updated.')
         with open(env_file, "a") as myfile:
