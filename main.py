@@ -83,7 +83,7 @@ def crop_and_get_text(im, crop_rectangle):
     return pytesseract.image_to_string(cropped_im, config='--psm 7')
 
 def clean_text(text):
-    return text.replace('Valid', '').replace('UTC', '').replace(':', '').replace(' ', '')
+    return text.replace('Valid', '').replace('UTC', '').replace(':', '').replace(' ', '').replace('\n', '')
 
 # a function that will take a path open and crop the image and return the text then compare if that text is similiar to another string
 def compare_text(path, text):
