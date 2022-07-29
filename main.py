@@ -125,7 +125,7 @@ def main():
 
     print('Checking if image has been updated...')
     latest_time = get_latest_file()
-    if compare_text(full_path, latest_time) == True:
+    if compare_text(full_path, time) == True:
         print('Image has been updated.')
         with open(env_file, "a") as myfile:
             myfile.write("UPDATED=TRUE")
